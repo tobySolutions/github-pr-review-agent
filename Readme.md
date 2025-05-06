@@ -8,6 +8,7 @@ A modern web application that provides AI-powered code reviews for GitHub pull r
 
 - **AI-Powered Code Reviews**: Get comprehensive feedback on code style, security, performance, and design
 - **GitHub Integration**: Seamlessly fetch pull request diffs from any public GitHub repository
+- **Post Comments**: Automatically post reviews as comments on GitHub pull requests
 - **Markdown Rendering**: Beautifully formatted review feedback with syntax highlighting
 - **Responsive Design**: Works on desktop and mobile devices
 - **Dark Mode Support**: Choose between light and dark themes
@@ -25,38 +26,37 @@ A modern web application that provides AI-powered code reviews for GitHub pull r
 
 1. Clone the repository:
 
-````bash
+\`\`\`bash
 git clone https://github.com/yourusername/github-pr-review-ai.git
 cd github-pr-review-ai
-
+\`\`\`
 
 2. Install dependencies:
 
-
-```shellscript
+\`\`\`bash
 npm install
 # or
 yarn install
-````
+\`\`\`
 
 3. Set up environment variables:
 
 Create a `.env.local` file in the root directory with the following variables:
 
-```plaintext
+\`\`\`
 GITHUB_TOKEN=your_github_personal_access_token
 GAIA_API_KEY=your_gaia_api_key
-GAIA_BASE_URL=your_gaia_base_url
+GAIA_API_BASE_URL=your_gaia_api_base_url
 GAIA_MODEL=gpt-4o  # or your preferred model
-```
+\`\`\`
 
 4. Run the development server:
 
-```shellscript
+\`\`\`bash
 npm run dev
 # or
 yarn dev
-```
+\`\`\`
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
@@ -65,18 +65,19 @@ yarn dev
 1. Enter the GitHub repository owner (username or organization)
 2. Enter the repository name
 3. Enter the pull request number
-4. Click "Review Pull Request"
-5. Wait for the AI to analyze the code changes
-6. Review the AI-generated feedback
+4. Optionally check "Post review as a GitHub comment" to post the review directly to the PR
+5. Click "Review Pull Request"
+6. Wait for the AI to analyze the code changes
+7. Review the AI-generated feedback
 
 ## Environment Variables
 
-| Variable        | Description                                   | Required |
-| --------------- | --------------------------------------------- | -------- |
-| `GITHUB_TOKEN`  | GitHub Personal Access Token with repo access | Yes      |
-| `GAIA_API_KEY`  | API key for Gaia LLM                          | Yes      |
-| `GAIA_BASE_URL` | Base URL for Gaia API                         | Yes      |
-| `GAIA_MODEL`    | Model name to use (defaults to gpt-4o)        | No       |
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `GITHUB_TOKEN` | GitHub Personal Access Token with repo access | Yes |
+| `GAIA_API_KEY` | API key for Gaia LLM | Yes |
+| `GAIA_API_BASE_URL` | Base URL for Gaia API | Yes |
+| `GAIA_MODEL` | Model name to use (defaults to gpt-4o) | No |
 
 ## Technologies Used
 
@@ -92,7 +93,7 @@ yarn dev
 
 ## Project Structure
 
-```plaintext
+\`\`\`
 github-pr-review-ai/
 ├── app/
 │   ├── actions.ts        # Server actions for PR review
@@ -112,7 +113,7 @@ github-pr-review-ai/
 ├── package.json          # Dependencies
 ├── README.md             # This file
 └── tsconfig.json         # TypeScript configuration
-```
+\`\`\`
 
 ## How It Works
 
@@ -120,15 +121,16 @@ github-pr-review-ai/
 2. **GitHub API Integration**: The application fetches the PR diff using the GitHub API
 3. **AI Analysis**: The diff is sent to the Gaia LLM for analysis
 4. **Feedback Generation**: The AI generates structured feedback on the code changes
-5. **Rendering**: The feedback is rendered as formatted markdown with syntax highlighting
+5. **GitHub Comment** (Optional): The review can be posted as a comment on the PR
+6. **Rendering**: The feedback is rendered as formatted markdown with syntax highlighting
 
 ## Future Enhancements
 
 - GitHub OAuth integration to avoid needing a personal token
 - Save review history
-- Post reviews directly as GitHub PR comments
 - Visual diff viewer
 - Customizable review templates
+- Support for private repositories
 
 ## Contributing
 
