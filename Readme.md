@@ -2,7 +2,6 @@
 
 A modern web application that provides AI-powered code reviews for GitHub pull requests. This tool helps developers get instant feedback on their code changes without waiting for human reviewers.
 
-![GitHub PR Review AI Screenshot](https://placeholder.svg?height=400&width=800)
 
 ## Features
 
