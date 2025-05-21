@@ -26,37 +26,37 @@ A modern web application that provides AI-powered code reviews for GitHub pull r
 
 1. Clone the repository:
 
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/github-pr-review-ai.git
 cd github-pr-review-ai
-\`\`\`
+```
 
 2. Install dependencies:
 
-\`\`\`bash
+```bash
 npm install
 # or
 yarn install
-\`\`\`
+```
 
 3. Set up environment variables:
 
 Create a `.env.local` file in the root directory with the following variables:
 
-\`\`\`
+```bash
 GITHUB_TOKEN=your_github_personal_access_token
 GAIA_API_KEY=your_gaia_api_key
 GAIA_API_BASE_URL=your_gaia_api_base_url
 GAIA_MODEL=gpt-4o  # or your preferred model
-\`\`\`
+```
 
 4. Run the development server:
 
-\`\`\`bash
+```bash
 npm run dev
 # or
 yarn dev
-\`\`\`
+```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
@@ -93,7 +93,7 @@ yarn dev
 
 ## Project Structure
 
-\`\`\`
+```bash
 github-pr-review-ai/
 ├── app/
 │   ├── actions.ts        # Server actions for PR review
@@ -113,7 +113,7 @@ github-pr-review-ai/
 ├── package.json          # Dependencies
 ├── README.md             # This file
 └── tsconfig.json         # TypeScript configuration
-\`\`\`
+```
 
 ## How It Works
 
